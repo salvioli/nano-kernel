@@ -25,7 +25,7 @@ enum Color {
     White
 };
 
-void clearScreen(char* vidptr){
+void clear_screen(char* vidptr){
  
     for (unsigned i = 0; i < 80 * 25 * 2; i += 2){
         vidptr[i] = ' ';
@@ -46,7 +46,7 @@ void kmain(void) {
     const char* str= "My first kernel is alive";
     char *vidptr = (char*) 0xb8000;                  // Start of video memory
 
-    clearScreen(vidptr);
+    clear_screen(vidptr);
 
     print(str, vidptr, LightRed);
 
